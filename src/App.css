@@ -3,13 +3,13 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 30vmin;
   pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+   /* animation: App-logo-spin infinite 20s linear; */
   }
 }
 
@@ -18,8 +18,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -34,5 +33,35 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+.duckAnimation {
+  animation: walk 5s linear infinite;
+  
+}
+
+.duck {
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+
+.duck img {
+  display: inline-block;
+  padding-left: 15%;
+  animation: walk 5s -2.5s linear infinite;
+}
+
+.duck2 img {
+  animation-delay: 0s;
+}
+
+@keyframes walk {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(100%, 0);
   }
 }
