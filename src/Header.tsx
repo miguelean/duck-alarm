@@ -23,39 +23,37 @@ const Header = () => {
           <div className="w-full h-full flex justify-center">
             <img src={duck} className="h-60 lg:h-96 w-60 lg:w-96" alt="logo" />
           </div>
-          <div className="py-10">
-            <div className="lg:max-w-lg text-center">
-              <h1 className="text-2xl font-semibold text-white lg:text-3xl">
-                Suscribete a nuestro{" "}
-                <span className="text-blue-500">Newsletter</span>
-              </h1>
+          <div className="py-10 text-center">
+            <h1 className="text-2xl font-semibold text-white lg:text-3xl">
+              Suscribete a nuestro{" "}
+              <span className="text-blue-500">Newsletter</span>
+            </h1>
 
-              <p className="mt-4 text-gray-400">
-                y descubre todas las novedades de{" "}
-                <span className="font-medium text-blue-500">Duck Alarm</span>
-              </p>
+            <p className="mt-4 text-gray-400">
+              y descubre todas las novedades de{" "}
+              <span className="font-medium text-blue-500">Duck Alarm</span>
+            </p>
 
-              <div className="flex flex-row mt-8 justify-center">
-                <input
-                  id="email"
-                  type="text"
-                  className="px-4 py-2 border rounded-md bg-gray-800 text-gray-300 border-gray-600 focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-blue-300"
-                  placeholder="Email Address"
-                />
+            <div className="w-full flex flex-col mt-8 items-center">
+              <input
+                id="email"
+                type="text"
+                className="w-72 lg:w-full px-4 py-2 border rounded-md bg-gray-800 text-gray-300 border-gray-600 focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-blue-300"
+                placeholder="Email Address"
+              />
 
-                <button
-                  onClick={() => {
-                    MySwal.fire({
-                      title: <strong>🦆 Quack! 🦆</strong>,
-                      html: <i>Este botón no funciona :-)</i>,
-                      icon: "success",
-                    })
-                  }}
-                  className="w-auto ml-4 px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:bg-blue-400"
-                >
-                  Suscribete
-                </button>
-              </div>
+              <button
+                onClick={() => {
+                  MySwal.fire({
+                    title: <strong>🦆 Quack 🦆</strong>,
+                    html: <i>Este botón no hace nada :-)</i>,
+                    icon: "info",
+                  })
+                }}
+                className="w-72 lg:w-full mt-3 px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:bg-blue-400"
+              >
+                Suscribete
+              </button>
             </div>
           </div>
         </div>
