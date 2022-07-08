@@ -1,11 +1,22 @@
 import withReactContent from "sweetalert2-react-content"
 import Swal from "sweetalert2"
 import "./App.css"
-import duck from "./duck.svg"
+import duck from "./duckEyeless.svg"
 import QR from "./QR.png"
+import { playAudio } from "./helpers"
+import { eyesTracker } from "./helpers/eyesTraker"
+import { useEffect } from "react"
 
 const Header = () => {
-  const MySwal = withReactContent(Swal)
+  const quack = new Audio(
+    "https://www.myinstants.com/media/sounds/quack-sound-effect.mp3"
+  )
+  const popUp = withReactContent(Swal)
+
+  useEffect(() => {
+    eyesTracker()
+  }, [])
+
   return (
     <main className="App-header bg-gray-800">
       <nav className="border-t-4 pt-5 mb-15 border-blue-500">
@@ -20,15 +31,35 @@ const Header = () => {
       </nav>
       <div className="container px-6 mx-auto">
         <div className="flex-col items-center lg:flex">
-          <div className="w-full h-full flex justify-center">
-            <img src={duck} className="h-60 lg:h-96 w-60 lg:w-96" alt="logo" />
+          <div className="relative w-full h-full flex justify-center">
+            <img src={duck} className="h-60 lg:h-96 w-60 lg:w-96" alt="duck" />
+            <div className="absolute top-10 ml-7 flex w-9 h-5 gap-0.5 lg:top-16 lg:w-14 lg:ml-11 lg:h-6 lg:gap-2">
+              <div
+                id="leftEye"
+                className="relative w-4 h-4 lg:w-6 lg:h-6 pt-0.7 lg:p-1 lg:pt-0.5 rounded-full"
+              >
+                <div className="absolute rounded-full w-1.5 h-1.5 lg:w-2 lg:h-2 bg-black" />
+              </div>
+              <div
+                id="rightEye"
+                className="relative w-4 h-4 lg:w-6 lg:h-6 pt-0.7 lg:p-1 lg:pt-0.5 rounded-full"
+              >
+                <div className="absolute rounded-full w-1.5 h-1.5 lg:w-2 lg:h-2 bg-black" />
+              </div>
+            </div>
           </div>
           <div className="py-10 text-center">
             <h1 className="text-2xl font-semibold text-white lg:text-3xl">
               Suscribete a nuestro{" "}
-              <span className="text-blue-500">Newsletter</span>
+              <span className="text-blue-500">
+                <a
+                  target="_blank"
+                  href="https://i.giphy.com/media/NEvPzZ8bd1V4Y/giphy.webp"
+                >
+                  Newsletter
+                </a>
+              </span>
             </h1>
-
             <p className="mt-4 text-gray-400">
               y descubre todas las novedades de{" "}
               <span className="font-medium text-blue-500">Duck Alarm</span>
@@ -44,7 +75,8 @@ const Header = () => {
 
               <button
                 onClick={() => {
-                  MySwal.fire({
+                  playAudio(quack)
+                  popUp.fire({
                     title: <strong>🦆 Quack 🦆</strong>,
                     html: <i>Este botón no hace nada :-)</i>,
                     icon: "info",
@@ -59,7 +91,9 @@ const Header = () => {
         </div>
       </div>
       <div className="w-ful flex justify-center">
-        <img src={QR} className="h-60" alt="logo" />
+        <a target="_blank" href="https://www.youtube.com/watch?v=pxa5VTs-0Qk">
+          <img className="h-60" src={QR} alt="QR" />
+        </a>
       </div>
       <div className="w-full h-full flex-col mt-5">
         <h3 className="mb-3 text-center">Work in progress...</h3>
