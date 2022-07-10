@@ -36,15 +36,15 @@ const Header = () => {
             <div className="absolute top-10 ml-7 flex w-9 h-5 gap-0.5 lg:top-16 lg:w-14 lg:ml-11 lg:h-6 lg:gap-2">
               <div
                 id="leftEye"
-                className="relative w-4 h-4 lg:w-6 lg:h-6 pt-0.7 lg:p-1 lg:pt-0.5 rounded-full"
+                className="relative w-4 h-4 lg:w-6 lg:h-6 rounded-full"
               >
-                <div className="absolute rounded-full w-1.5 h-1.5 lg:w-2 lg:h-2 bg-black" />
+                <div className="absolute rounded-full left-1 lg:left-2 w-1.5 h-1.5 lg:w-2 lg:h-2 bg-black" />
               </div>
               <div
                 id="rightEye"
-                className="relative w-4 h-4 lg:w-6 lg:h-6 pt-0.7 lg:p-1 lg:pt-0.5 rounded-full"
+                className="relative w-4 h-4 lg:w-6 lg:h-6 rounded-full"
               >
-                <div className="absolute rounded-full w-1.5 h-1.5 lg:w-2 lg:h-2 bg-black" />
+                <div className="absolute rounded-full left-1 lg:left-2 w-1.5 h-1.5 lg:w-2 lg:h-2 bg-black" />
               </div>
             </div>
           </div>
